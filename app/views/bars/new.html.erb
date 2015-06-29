@@ -1,0 +1,13 @@
+<h1>Nouveau Bar</h1>
+
+<%= form_for :bar, url: bars_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
