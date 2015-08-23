@@ -1,0 +1,17 @@
+<h1>Liste des N1as</h1>
+
+<%= link_to 'Nouveau N1a', new_n1a_path %>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Bar</th>
+  </tr>
+
+  <% @n1as.each do |n1a| %>
+    <tr>
+      <td><%= link_to n1a.name, n1a %></td>
+      <td><%= link_to n1a.bar %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,32 @@
+<h2>Inscription</h1>
+
+<%= form_for :n1a, url: n1as_path do |f| %>
+  <% if @n1a && @n1a.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible de créer votre compte :
+      </h2>
+      <ul>
+        <% @n1a.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :name, "Login Rézo" %><br>
+    <%= f.text_field :name, placeholder: 'prénom.nom' %>
+  </p>
+
+  <p>
+    <%= f.label :bar %><br>
+    <%= f.collection_select :bar_id, Bar.order(:name), :id, :name %>
+  </p>
+
+  <p>
+    <%= f.submit "S'inscrire !"%>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', root_url %>
+
