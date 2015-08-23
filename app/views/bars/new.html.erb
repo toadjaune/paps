@@ -1,6 +1,18 @@
-<h1>Nouveau Bar</h1>
+<h2>Nouveau Bar</h1>
 
 <%= form_for :bar, url: bars_path do |f| %>
+  <% if @bar && @bar.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible d'enregistrer le bar :
+      </h2>
+      <ul>
+        <% @bar.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -10,4 +22,6 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Retour', bars_path %>
 
