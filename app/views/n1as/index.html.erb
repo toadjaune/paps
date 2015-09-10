@@ -1,5 +1,6 @@
 <h1>Liste des N1as</h1>
 
+<%= link_to 'Retour', root_url %><br/>
 <%= link_to 'Nouveau N1a', new_n1a_path %>
 
 <table>
@@ -12,6 +13,9 @@
     <tr>
       <td><%= link_to n1a.name, n1a %></td>
       <td><%= link_to n1a.bar %></td>
+      <td><%= link_to 'Supprimer', n1a_path(n1a),
+                    method: :delete,
+                    data: { confirm: 'Voulez-vous vraiment supprimer ce n1A ?' } %></td>
     </tr>
   <% end %>
 </table>

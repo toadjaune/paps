@@ -13,11 +13,19 @@ class N1asController < ApplicationController
 
   def create
     @n1a = N1a.new(n1a_params)
+    @n1a.admin = false
     if @n1a.save
       redirect_to root_url
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @n1a = N1a.find(params[:id])
+    @n1a.destroy
+
+    redirect_to n1as_path
   end
 
   private
