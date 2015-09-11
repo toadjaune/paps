@@ -1,13 +1,15 @@
-<h2>Inscription</h1>
+<h1>Page de Login</h1>
 
-<%= form_for :n1a, url: n1as_path do |f| %>
-  <% if @n1a && @n1a.errors.any? %>
+<%= link_to 'Retour', root_url %><br/>
+
+<%= form_for :login, url: logins_path do |f| %>
+  <% if @user && @user.errors.any? %>
     <div id="error_explanation">
       <h2>
-        Impossible de créer votre compte :
+        Impossible de vous connecter :
       </h2>
       <ul>
-        <% @n1a.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -24,14 +26,9 @@
   </p>
 
   <p>
-    <%= f.label :bar %><br>
-    <%= f.collection_select :bar_id, Bar.order(:name), :id, :name %>
-  </p>
-
-  <p>
-    <%= f.submit "S'inscrire !"%>
+    <%= f.submit "Se connecter"%>
   </p>
 <% end %>
 
-<%= link_to 'Retour', root_url %>
+<%= link_to 'S\'inscrire', new_n1a_path %>
 

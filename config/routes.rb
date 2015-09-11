@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :bars
   resources :n1as
+  resources :login
 
   root 'welcome#index'
 
