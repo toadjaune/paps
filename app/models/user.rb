@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable #,:confirmable
-  validates :name,  presence: true,
-                    uniqueness: true
   validates :admin, inclusion: { in: [true, false] }
 
   def to_s
