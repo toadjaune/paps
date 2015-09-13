@@ -1,6 +1,6 @@
 class Bar < ActiveRecord::Base
 
-  has_many :n1as, dependent: :destroy
+  has_many :users, dependent: :destroy
 
   validates :name, presence: true,
                    length: {minimum: 5 }

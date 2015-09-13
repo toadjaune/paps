@@ -1,0 +1,20 @@
+<h1>Liste des Utilisateurs</h1>
+
+<%= link_to 'Retour', root_url %><br/>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Bar</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user %></td>
+      <td><%= link_to user.bar unless user.bar.blank? %></td>
+      <td><%= link_to 'Supprimer', user_path(user),
+                    method: :delete,
+                    data: { confirm: 'Voulez-vous vraiment supprimer ce n1A ?' } %></td>
+    </tr>
+  <% end %>
+</table>
