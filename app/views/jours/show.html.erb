@@ -1,0 +1,10 @@
+<p>
+  <strong>Date:</strong>
+  <%= @jour.date %><br/>
+  <strong>Créneaux d'affichage/prévente maximum par bar:</strong>
+  <%= @jour.max_affprev %><br/>
+  <strong>Créneaux commando maximum par bar:</strong>
+  <%= @jour.max_commandos %><br/>
+</p>
+
+<%= link_to 'retour', jours_path %>

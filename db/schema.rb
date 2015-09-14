@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911143434) do
+ActiveRecord::Schema.define(version: 20150914123547) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "jours", force: :cascade do |t|
+    t.string   "date",          limit: 255
+    t.integer  "max_commandos", limit: 4
+    t.integer  "max_affprev",   limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "jours", ["date"], name: "index_jours_on_date", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.integer  "bar_id",                 limit: 4

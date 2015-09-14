@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  max_commandos: 1
+  max_affprev: 1
+
+two:
+  date: MyString
+  max_commandos: 1
+  max_affprev: 1

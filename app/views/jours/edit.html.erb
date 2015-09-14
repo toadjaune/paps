@@ -1,0 +1,34 @@
+<h1> Modification d'un jour </h1>
+
+<%= form_for :jour, url: jours_path do |f| %>
+  <% if @jour && @jour.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible d'enregistrer le jour :
+      </h2>
+      <ul>
+        <% @jour.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </p>
+  <p>
+    <%= f.label :max_affprev %><br>
+    <%= f.text_field :max_affprev %>
+  </p>
+  <p>
+    <%= f.label :max_commandos %><br>
+    <%= f.text_field :max_commandos %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', jours_path %>

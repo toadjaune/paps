@@ -1,0 +1,24 @@
+<h1>Liste des jours</h1>
+
+<%= link_to 'Retour', root_url %><br/>
+<%= link_to 'Nouveau Jour', new_jour_path %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Max Aff/Prev</th>
+    <th>Max commandos</th>
+  </tr>
+
+  <% @jours.each do |jour| %>
+    <tr>
+      <td><%= link_to jour %></td>
+      <td><%= jour.max_affprev %></td>
+      <td><%= jour.max_commandos %></td>
+      <td><%= link_to 'Supprimer', jour_path(jour),
+                    method: :delete,
+                    data: { confirm: 'Voulez-vous vraiment supprimer ce jour ?
+                            Attention, cela supprime tous les Créneaux et PAPS appartenant à ce jour !' } %></td>
+    </tr>
+  <% end %>
+</table>
