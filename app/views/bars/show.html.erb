@@ -3,4 +3,11 @@
   <%= @bar.name %>
 </p>
 
+Ajouter la liste des n1As du bar ici (voire des créneaux, des PAPS, etc ...)<br/>
+
+<%= link_to 'Modifier', edit_bar_path(@bar) %><br/>
+<%= link_to 'Supprimer', bar_path(@bar),
+  method: :delete,
+  data: { confirm: 'Voulez-vous vraiment supprimer ce bar ?
+    Attention, cela supprime tous les n1As appartenant à ce bar !' } %><br/>
 <%= link_to 'retour', bars_path %>

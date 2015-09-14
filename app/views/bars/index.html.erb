@@ -10,11 +10,7 @@
 
   <% @bars.each do |bar| %>
     <tr>
-      <td><%= link_to bar.name, bar %></td>
-      <td><%= link_to 'Supprimer', bar_path(bar),
-                    method: :delete,
-                    data: { confirm: 'Voulez-vous vraiment supprimer ce bar ?
-                            Attention, cela supprime tous les n1As appartenant à ce bar !' } %></td>
+      <td><%= link_to bar, bar %></td>
     </tr>
   <% end %>
 </table>

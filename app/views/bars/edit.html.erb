@@ -1,10 +1,11 @@
 <h1> Modification d'un bar </h1>
 
-<%= form_for :bar, url: bars_path do |f| %>
+<%= form_for @bar do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+  <%= f.submit %>
 <% end %>
 
 <%= link_to 'Retour', bars_path %>

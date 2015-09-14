@@ -1,0 +1,42 @@
+<h1> Modification d'un PAPS </h1>
+
+<%= form_for @pap do |f| %>
+  <% if @pap && @pap.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible d'enregistrer le PAPS :
+      </h2>
+      <ul>
+        <% @pap.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </p>
+
+  <p>
+    <%= f.label :reponse %><br>
+    <%= f.text_field :reponse %>
+  </p>
+
+  <p>
+    <%= f.label :bar %><br>
+    <%= f.collection_select :bar_id, Bar.order(:name), :id, :name %>
+  </p>
+
+  <p>
+    <%= f.label :jour %><br>
+    <%= f.collection_select :jour_id, Jour.order(:date), :id, :date %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', paps_path %>

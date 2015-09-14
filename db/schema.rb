@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914123547) do
+ActiveRecord::Schema.define(version: 20150914140251) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20150914123547) do
   end
 
   add_index "jours", ["date"], name: "index_jours_on_date", unique: true, using: :btree
+
+  create_table "paps", force: :cascade do |t|
+    t.string   "question",   limit: 255
+    t.string   "reponse",    limit: 255
+    t.integer  "jour_id",    limit: 4
+    t.integer  "bar_id",     limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "paps", ["jour_id"], name: "index_paps_on_jour_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.integer  "bar_id",                 limit: 4

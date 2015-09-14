@@ -1,0 +1,22 @@
+<p>
+  <strong>Question:</strong>
+  <%= @pap.question %><br/>
+</p>
+<p>
+  <strong>Réponse:</strong>
+  <%= @pap.reponse %><br/>
+</p>
+<p>
+  <strong>Jour:</strong>
+  <%= @pap.jour %><br/>
+</p>
+<p>
+  <strong>Bar:</strong>
+  <%= @pap.bar %><br/>
+</p>
+
+<%= link_to 'Modifier', edit_pap_path(@pap) %><br/>
+<%= link_to 'Supprimer', pap_path(@pap),
+                    method: :delete,
+                    data: { confirm: 'Voulez-vous vraiment supprimer ce PAPS ?' } %><br/>
+<%= link_to 'retour', paps_path %>

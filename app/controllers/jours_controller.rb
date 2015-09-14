@@ -24,6 +24,15 @@ class JoursController < ApplicationController
     end
   end
 
+  def update
+    @jour = Jour.find(params[:id])
+    if @jour.update(jour_params)
+      redirect_to @jour
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @jour = Jour.find(params[:id])
     @jour.destroy
