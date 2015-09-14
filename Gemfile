@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2.3'
 
 gem 'devise', '~> 3.5.2'
+gem 'twitter-bootstrap-rails'
 
 gem 'mysql2'
 # Use SCSS for stylesheets
