@@ -5,9 +5,9 @@ ruby '2.2.1'
 gem 'rails', '~> 4.2.3'
 
 gem 'devise', '~> 3.5.2'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
