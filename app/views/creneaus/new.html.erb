@@ -1,22 +1,9 @@
 <h2>Nouveau Creneau</h1>
 
-<%= form_for :creneau, url: creneaus_path do |f| %>
-  <% if @creneau && @creneau.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        Impossible d'enregistrer le creneau :
-      </h2>
-      <ul>
-        <% @creneau.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <%= render 'form' %>
 
-<% end %>
+
 
 <%= link_to 'Retour', creneaus_path %>
 

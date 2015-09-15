@@ -7,12 +7,13 @@ class CreneausController < ApplicationController
   def edit
     @creneau = Creneau.find(params[:id])
   end
-  
+
   def show
     @creneau = Creneau.find(params[:id])
   end
 
   def new
+    @creneau = Creneau.new
   end
 
   def create
@@ -44,7 +45,7 @@ class CreneausController < ApplicationController
   end
 
   private
-    def creneau_params
-      params.require(:creneau).permit(:nom, :distance, :adresse, :commentaires)
-    end
+  def creneau_params
+    params.require(:creneau).permit(:nom, :distance, :adresse, :commentaires)
+  end
 end
