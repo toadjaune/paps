@@ -1,0 +1,30 @@
+# Copier ce fichier en dant que database.yml
+
+# Il faudra créer un utilisateur 'paps' et les 3 bases de données 'paps_development', 
+# 'paps_production' et 'paps_test', et lui donner accès à ces BDD.
+
+# phpmyadmin est votre ami, google, aussi.
+
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  collation: utf8_general_ci
+  username: paps
+  password: unsupermotdepassebienaleatoire
+
+development:
+  <<: *default
+  database: paps_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: paps_test
+
+production:
+  <<: *default
+  database: paps_production
