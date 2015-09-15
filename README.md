@@ -1,5 +1,5 @@
 Installation :
-- Installer rvm
+- Installer rvm (https://rvm.io/rvm/install)
 - Se déplacer dans le dépôt, et faire ce que rvm dit jusqu'à ce qu'il arrête de gueuler
 * Pour la suite, bien rester dans le dossier du dépôt
 - gem install bundler
