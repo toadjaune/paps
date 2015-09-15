@@ -1,13 +1,41 @@
 <p>
   <strong>Nom:</strong>
-  <%= @bar.name %>
+  <%= @creneau.nom %>
 </p>
 
-Ajouter la liste des n1As du bar ici (voire des créneaux, des PAPS, etc ...)<br/>
+<p>
+  <strong>Jour:</strong>
+  <%= @creneau.jour %>
+</p>
 
-<%= link_to 'Modifier', edit_bar_path(@bar) %><br/>
-<%= link_to 'Supprimer', bar_path(@bar),
+<p>
+  <strong>PAPS:</strong>
+  <%= @creneau.pap %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @creneau.genre %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @creneau.distance %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @creneau.adresse %>
+</p>
+
+<p>
+  <strong>Commentaires:</strong>
+  <%= @creneau.commentaires %>
+</p>
+
+
+<%= link_to 'Modifier', edit_creneau_path(@creneau) %><br/>
+<%= link_to 'Supprimer', creneau_path(@creneau),
   method: :delete,
-  data: { confirm: 'Voulez-vous vraiment supprimer ce bar ?
-    Attention, cela supprime tous les n1As appartenant à ce bar !' } %><br/>
-<%= link_to 'retour', bars_path %>
+  data: { confirm: 'Voulez-vous vraiment supprimer ce creneau ?' } %><br/>
+<%= link_to 'retour', creneaus_path %>

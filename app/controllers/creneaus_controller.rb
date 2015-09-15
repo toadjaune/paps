@@ -46,6 +46,6 @@ class CreneausController < ApplicationController
 
   private
   def creneau_params
-    params.require(:creneau).permit(:nom, :distance, :adresse, :commentaires)
+    params.require(:creneau).permit(:nom, :distance, :adresse, :commentaires, :pap_id, :jour_id, :genre)
   end
 end

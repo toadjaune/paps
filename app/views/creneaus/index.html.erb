@@ -6,8 +6,8 @@
 <table>
   <tr>
     <th>Nom</th>
-    <th>Date</th>
-    <th>Bar</th>
+    <th>Jour</th>
+    <th>Pap</th>
     <th>Type</th>
     <th>Distance</th>
     <th>Adresse</th>
@@ -17,9 +17,9 @@
   <% @creneaus.each do |creneau| %>
     <tr>
       <td><%= link_to creneau, creneau %></td>
-      <td><%= link_to creneau.date %></td>
-      <td><%= link_to creneau.bar %></td>
-      <td><%= link_to creneau.type %></td>
+      <td><%= link_to creneau.jour %></td>
+      <td><%= link_to creneau.pap %></td>
+      <td><%= link_to creneau.genre %></td>
       <td><%= creneau.distance %></td>
       <td><%= creneau.adresse %></td>
       <td><%= creneau.commentaires %></td>

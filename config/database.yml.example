@@ -1,4 +1,4 @@
-# Copier ce fichier en dant que database.yml
+# Copier ce fichier en tant que database.yml
 
 # Il faudra créer un utilisateur 'paps' et les 3 bases de données 'paps_development', 
 # 'paps_production' et 'paps_test', et lui donner accès à ces BDD.

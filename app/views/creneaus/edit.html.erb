@@ -1,11 +1,3 @@
-<h1> Modification d'un bar </h1>
+<h1> Modification d'un Créneau</h1>
 
-<%= form_for @bar do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'Retour', bars_path %>
+<%= render 'form' %>

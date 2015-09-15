@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914191557) do
+ActiveRecord::Schema.define(version: 20150915220304) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150914191557) do
     t.string   "distance",     limit: 255
     t.string   "adresse",      limit: 255
     t.string   "commentaires", limit: 255
-    t.string   "type",         limit: 255
-    t.integer  "paps_id",      limit: 4
+    t.string   "genre",        limit: 255
+    t.integer  "pap_id",       limit: 4
     t.integer  "jour_id",      limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

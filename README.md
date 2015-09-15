@@ -6,7 +6,8 @@ Installation :
 - gem install bundler
 - sudo apt-get install mysql-server libmysqlclient
 - bundle install
-- configurer config/database.yml
+- configurer config/database.yml, en se basant sur config/database.yml.example
+- rake db:migrate
 
 
 Commandes utiles :

@@ -21,17 +21,17 @@
   <p>
     <%= f.label :jour %><br>
     <%= f.collection_select :jour_id, Jour.order(:date), :id, :date %>
-
   </p>
+
   <p>
     TODO : Refaire ce champ <br/>
-    <%= f.label :paps %><br>
-    <%= f.collection_select :paps_id, Pap.order(:reponse), :id, :reponse %>
+    <%= f.label :pap %><br>
+    <%= f.collection_select :pap_id, Pap.order(:reponse), :id, :reponse %>
   </p>
 
   <p>
-    <%= f.label :type %><br/>
-    <%= f.text_field :type %>
+    <%= f.label :genre %><br/>
+    <%= f.text_field :genre %>
   </p>
   
   <p>
@@ -53,3 +53,5 @@
     <%= f.submit %>
   </p>
 <% end %> 
+
+<%= link_to 'Retour', creneaus_path %>
