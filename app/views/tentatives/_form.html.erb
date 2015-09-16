@@ -1,0 +1,37 @@
+<%= form_for @tentative do |f| %>
+
+  <% if @tentative.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible d'enregistrer la tentative :
+      </h2>
+      <ul>
+        <% @tentative.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :contenu %><br/>
+    <%= f.text_field :contenu %>
+  </p>
+  
+  <p>
+    <%= f.label :user %><br>
+    <%= f.collection_select :user_id, User.order(:email), :id, :email %>
+  </p>
+
+  <p>
+    TODO : Refaire ce champ <br/>
+    <%= f.label :pap %><br>
+    <%= f.collection_select :pap_id, Pap.order(:reponse), :id, :reponse %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %> 
+
+<%= link_to 'Retour', tentatives_path %>

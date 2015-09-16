@@ -1,0 +1,20 @@
+<p>
+  <strong>Contenu:</strong>
+  <%= @tentative.contenu %>
+</p>
+
+<p>
+  <strong>n1A:</strong>
+  <%= @tentative.user %>
+</p>
+
+<p>
+  <strong>PAPS:</strong>
+  <%= @tentative.pap %>
+</p>
+
+<%= link_to 'Modifier', edit_tentative_path(@tentative) %><br/>
+<%= link_to 'Supprimer', tentative_path(@tentative),
+  method: :delete,
+  data: { confirm: 'Voulez-vous vraiment supprimer ce tentative ?' } %><br/>
+<%= link_to 'retour', tentatives_path %>

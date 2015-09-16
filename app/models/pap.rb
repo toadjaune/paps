@@ -2,6 +2,7 @@ class Pap < ActiveRecord::Base
   belongs_to :jour
   belongs_to :bar
   has_many :creneaus
+  has_many :tentatives
 
   validates_presence_of :jour
   validates_presence_of :bar

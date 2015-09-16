@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915220304) do
+ActiveRecord::Schema.define(version: 20150916132908) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 20150915220304) do
   end
 
   add_index "paps", ["jour_id"], name: "index_paps_on_jour_id", using: :btree
+
+  create_table "tentatives", force: :cascade do |t|
+    t.string   "contenu",    limit: 255
+    t.integer  "pap_id",     limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer  "bar_id",                 limit: 4

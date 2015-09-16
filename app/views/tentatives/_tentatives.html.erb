@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Tentative</th>
+    <th>User</th>
+    <th>PAPS</th>
+  </tr>
+
+  <% tentatives.each do |tentative| %>
+    <tr>
+      <td><%= link_to tentative, tentative %></td>
+      <td><%= link_to tentative.user %></td>
+      <td><%= link_to tentative.pap %></td>
+    </tr>
+  <% end %>
+</table>

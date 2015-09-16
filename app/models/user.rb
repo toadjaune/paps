@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 #  before_validation(on: :create) {self.admin = false} #:put_admin_to_false
   belongs_to :bar
+  has_many :tentatives
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
