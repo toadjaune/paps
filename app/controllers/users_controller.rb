@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  # Le whitelistage du paramètre :bar_id est fait dans ApplicationController
+
   def index
     @users = User.all
   end
@@ -11,16 +13,6 @@ class UsersController < ApplicationController
   def new
   end
 
-  def create
-    @user = User.new(user_params)
-    @user.admin = false
-    if @user.save
-      redirect_to root_url
-    else
-      render 'new'
-    end
-  end
-
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -28,8 +20,4 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  private
-    def user_params
-      params.require(:user).permit(:name, :bar_id)
-    end
 end
