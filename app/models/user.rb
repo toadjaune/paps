@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 
-#  before_validation(on: :create) {self.admin = false} #:put_admin_to_false
+  before_validation(on: :create) do
+    self.admin = false
+    p "bleh"
+  end
   belongs_to :bar
   has_many :tentatives
 
@@ -9,7 +12,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable #,:confirmable
 
-#  validates :admin, inclusion: { in: [true, false] }
+  validates :admin, inclusion: { in: [true, false] }
 
 #  with_options unless: :admin do |n1a|
 #    n1a.validates :bar, presence: true
@@ -19,15 +22,5 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
-
-  def authenticate!
-
-
-  end
-
-  private
-    def put_admin_to_false
-      self.admin = false
-    end
 
 end
