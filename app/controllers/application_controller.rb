@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # Pour être sécu, par défaut il faut être admin partout
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, unless: :devise_controller?
   before_action :authenticate_user!
 
   protected
