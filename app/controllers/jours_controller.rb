@@ -10,6 +10,7 @@ class JoursController < ApplicationController
   
   def show
     @jour = Jour.find(params[:id])
+    @bars_restants = @jour.bars_restants
   end
 
   def new

@@ -12,7 +12,7 @@
 
   <% @jours.each do |jour| %>
     <tr>
-      <td><%= link_to jour %></td>
+      <td><%= link_to jour, jour %></td>
       <td><%= jour.max_affprev %></td>
       <td><%= jour.max_commandos %></td>
       <td><%= link_to 'Supprimer', jour_path(jour),
