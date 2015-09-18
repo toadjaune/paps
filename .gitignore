@@ -14,3 +14,6 @@
 
 # Ignore config files with passwords
 /config/database.yml
+
+*.swp
+public/assets/*

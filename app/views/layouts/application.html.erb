@@ -15,8 +15,9 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     </main>
   </body>
 </html>
