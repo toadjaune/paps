@@ -1,0 +1,40 @@
+<h1>Nouveau PAPS</h1>
+Pour le jour <%= link_to @jour %>
+
+<%= form_for @pap do |f| %>
+  <% if @pap && @pap.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Impossible d'enregistrer le PAPS :
+      </h2>
+      <ul>
+        <% @pap.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </p>
+
+  <p>
+    <%= f.label :reponse %><br>
+    <%= f.text_field :reponse %>
+  </p>
+
+  <p>
+    <%= f.label :bar %><br>
+    <%= f.collection_select :bar_id, @bars_restants, :id, :name %>
+  </p>
+
+  <%= hidden_field_tag('pap[jour_id]', @jour.id) %>
+    
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', paps_path %>

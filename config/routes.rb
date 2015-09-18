@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'jours/:id/new_paps', to: 'jours#new_paps'
+
   devise_for :users
   resources :users
   get 'welcome/index'
