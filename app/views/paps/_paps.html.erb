@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Bar</th>
+    <th>Jour</th>
+    <th>Question</th>
+    <th>Réponse</th>
+  </tr>
+
+  <% paps.each do |pap| %>
+    <tr>
+      <td><%= link_to pap.bar, pap.bar %></td>
+      <td><%= link_to pap.jour, pap.jour %></td>
+      <td><%= pap.question %></td>
+      <td><%= link_to pap.reponse, pap %></td>
+    </tr>
+  <% end %>
+</table>

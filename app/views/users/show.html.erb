@@ -1,0 +1,22 @@
+<h1>Utilisateur</h1>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %><br/>
+</p>
+<p>
+  <strong>Bar:</strong>
+  <%= @user.bar %><br/>
+</p>
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %><br/>
+</p>
+
+<%= link_to 'Modifier', edit_user_path(@user) %> | 
+<%= link_to 'Supprimer', user_path(@user),
+                    method: :delete,
+                    data: { confirm: 'Voulez-vous vraiment supprimer cet utilisateur ?' } %> | 
+<%= link_to 'retour', users_path %>
+
+<%= render partial: 'tentatives/tentatives', object: @user.tentatives %>

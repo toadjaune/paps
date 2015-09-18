@@ -1,15 +1,15 @@
 <table>
   <tr>
     <th>Tentative</th>
-    <th>User</th>
     <th>PAPS</th>
+    <th>User</th>
   </tr>
 
   <% tentatives.each do |tentative| %>
     <tr>
       <td><%= link_to tentative, tentative %></td>
-      <td><%= link_to tentative.user %></td>
       <td><%= link_to tentative.pap %></td>
+      <td><%= link_to tentative.user %></td>
     </tr>
   <% end %>
 </table>

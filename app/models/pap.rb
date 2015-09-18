@@ -8,4 +8,8 @@ class Pap < ActiveRecord::Base
   validates_presence_of :bar
   validates_presence_of :question
   validates_presence_of :reponse
+
+  def to_s
+    "#{question} (#{bar})"
+  end
 end
