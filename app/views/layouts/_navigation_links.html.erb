@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-Connecté en tant que <%= current_user.email %>.
-<%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
-<% else %>
-<%= link_to "S'inscrire", new_user_registration_path %> ou <%= link_to "se connecter", new_user_session_path %>
-<% end %>

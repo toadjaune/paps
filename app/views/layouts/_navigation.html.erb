@@ -1,12 +1,19 @@
-<%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
+
+<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
-    <li class="name"><%= link_to 'Accueil', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    <li class="name">
+      <h1><a href="#">PAPS</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
-  <div class="top-bar-section right">
-    <ul>
-      <%= render 'layouts/navigation_links' %>
+
+  <section class="top-bar-section">
+    <ul class="left">
+     <%= render 'layouts/navigation_links_left' %>
     </ul>
-  </div>
+       <ul class="right">
+      <%= render 'layouts/navigation_links_right' %>
+    </ul>
+  </section>
 </nav>
+
