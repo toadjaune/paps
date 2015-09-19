@@ -5,4 +5,10 @@ class WelcomeController < ApplicationController
 
   def index
   end
+
+  def papshere
+    @user = current_user
+    @jour = Jour.actif
+  end
+
 end

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   get 'jours/:id/newpaps', to: 'jours#newpaps'
+  get 'welcome/index'
+  get 'welcome/papshere'
 
   devise_for :users
   resources :users
-  get 'welcome/index'
   resources :bars
   resources :jours
   resources :paps
