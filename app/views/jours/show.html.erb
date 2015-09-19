@@ -14,7 +14,9 @@ PAPS :
 <%= render partial: 'paps/paps', object: @jour.paps %>
 </p>
 <% if @bars_restants %>
-  <strong>Attention, il reste des bars sans PAPS pour ce jour !</strong>
+  <strong>Attention, il reste des bars sans PAPS pour ce jour !</strong><br/>
+  <% #link_to 'Nouveau PAPS', newpaps_jour_path(@jour) %>
+  (Lien à insérer)
 <% end %>
 <p>
 Créneaux :

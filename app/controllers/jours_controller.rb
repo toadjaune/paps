@@ -40,6 +40,12 @@ class JoursController < ApplicationController
     redirect_to jours_path
   end
 
+  def newpaps
+    @jour = Jour.find(params[:id])
+    @bars_restants = @jour.bars_restants
+    @pap = Pap.new
+  end
+
   private
     def jour_params
       params.require(:jour).permit(:date, :max_commandos, :max_affprev)

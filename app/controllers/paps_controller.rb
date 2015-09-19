@@ -18,7 +18,7 @@ class PapsController < ApplicationController
   def create
     @pap = Pap.new(pap_params)
     if @pap.save 
-      redirect_to @pap
+      redirect_to @pap.jour
     else
       render 'new'
     end
