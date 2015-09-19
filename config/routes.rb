@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'jours/:id/newpaps', to: 'jours#newpaps'
+  get 'jours/:id/newcreneau', to: 'jours#newcreneau'
   get 'welcome/index'
   get 'welcome/papshere'
 

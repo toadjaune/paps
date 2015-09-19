@@ -1,3 +1,6 @@
+<h1>Nouveau créneau </h1>
+Pour le <%= @jour %>
+
 <%= form_for @creneau do |f| %>
 
   <% if @creneau.errors.any? %>
@@ -18,16 +21,7 @@
     <%= f.text_field :nom %>
   </p>
   
-  <p>
-    <%= f.label :jour %><br>
-    <%= f.collection_select :jour_id, Jour.order(:date), :id, :date %>
-  </p>
-
-  <p>
-    TODO : Refaire ce champ <br/>
-    <%= f.label :pap %><br>
-    <%= f.collection_select :pap_id, Pap.order(:reponse), :id, :reponse %>
-  </p>
+  <%= hidden_field_tag('creneau[jour_id]', @jour.id) %>
 
   <p>
     <%= f.label :genre %><br/>
@@ -50,7 +44,7 @@
   </p>
   
   <p>
-    <%= f.submit  class: 'button submit-button radius'%>
+    <%= f.submit class: 'button submit-button radius' %>
   </p>
 <% end %> 
 

@@ -47,6 +47,11 @@ class JoursController < ApplicationController
     @pap = Pap.new
   end
 
+  def newcreneau
+    @jour = Jour.find(params[:id])
+    @creneau = Creneau.new
+  end
+
   private
     def jour_params
       params.require(:jour).permit(:date, :max_commandos, :max_affprev, :actif)
