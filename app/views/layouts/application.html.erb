@@ -14,6 +14,13 @@
   <header>
    <%= render 'layouts/navigation' %>
   </header>
+  <% if user_signed_in? %>
+  <div class="row">
+   <div class="small-12 columns text-right signedin">
+    Connecté en tant que <%= current_user.email %>
+   </div>
+  </div>
+  <% end %>
   <main role="main" class="main">
    <div class="row">
     <div class="small-12 columns">
