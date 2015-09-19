@@ -40,7 +40,7 @@ class JoursController < ApplicationController
     redirect_to jours_path
   end
 
-  def new_paps
+  def newpaps
     @jour = Jour.find(params[:id])
     @bars_restants = @jour.bars_restants
     @pap = Pap.new

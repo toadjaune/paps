@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'jours/:id/new_paps', to: 'jours#new_paps'
+  get 'jours/:id/newpaps', to: 'jours#newpaps'
 
   devise_for :users
   resources :users
