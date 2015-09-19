@@ -1,0 +1,40 @@
+@import "foundation_and_overrides";
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+//= require foundation_and_overrides
+
+*/
+
+$base-margin: 39px;
+
+@mixin paper($margin:79px){
+ background-color: #fff; 
+ background-image: 
+  linear-gradient(90deg, transparent $margin, #abced4 $margin, #abced4 $margin+2px, transparent $margin+2px),
+  linear-gradient(#eee .1em, transparent .1em);
+ background-size: 100% 1.2em;
+}
+
+body{
+ @include paper($base-margin);
+}
+.main{
+ margin-left: $base-margin;
+}
+
+.signedin {
+ font-size: 70%;
+}
