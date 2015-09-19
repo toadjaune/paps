@@ -5,12 +5,14 @@ ruby '2.2.1'
 gem 'rails', '~> 4.2.3'
 
 gem 'devise', '~> 3.5.2'
-gem 'twitter-bootstrap-rails', '~> 3.2.0'
-
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.5.2'
 group :development do
   gem 'rails_layout'
 end
+
+# Traduction
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
