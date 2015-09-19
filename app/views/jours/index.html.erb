@@ -8,6 +8,7 @@
     <th>Date</th>
     <th>Max Aff/Prev</th>
     <th>Max commandos</th>
+    <th>Actif</th>
   </tr>
 
   <% @jours.each do |jour| %>
@@ -15,10 +16,7 @@
       <td><%= link_to jour, jour %></td>
       <td><%= jour.max_affprev %></td>
       <td><%= jour.max_commandos %></td>
-      <td><%= link_to 'Supprimer', jour_path(jour),
-                    method: :delete,
-                    data: { confirm: 'Voulez-vous vraiment supprimer ce jour ?
-                            Attention, cela supprime tous les Créneaux et PAPS appartenant à ce jour !' } %></td>
+      <td><%= jour.actif %></td>
     </tr>
   <% end %>
 </table>

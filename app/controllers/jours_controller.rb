@@ -14,6 +14,7 @@ class JoursController < ApplicationController
   end
 
   def new
+    @jour = Jour.new
   end
 
   def create
@@ -48,7 +49,7 @@ class JoursController < ApplicationController
 
   private
     def jour_params
-      params.require(:jour).permit(:date, :max_commandos, :max_affprev)
+      params.require(:jour).permit(:date, :max_commandos, :max_affprev, :actif)
     end
 
 end
