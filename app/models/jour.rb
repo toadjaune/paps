@@ -23,6 +23,14 @@ class Jour < ActiveRecord::Base
     Bar.all.reject{ |bar| bars.include?(bar) }
   end
 
+  def creneaus_affprev
+    creneaus.where(genre: ['Affichage', 'Prevente'])
+  end
+
+  def creneaus_commando
+    creneaus.where(genre: 'Commando')
+  end
+
   def to_s
     date
   end

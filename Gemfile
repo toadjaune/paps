@@ -5,7 +5,8 @@ ruby '2.2.1'
 gem 'rails', '~> 4.2.3'
 
 gem 'devise', '~> 3.5.2'
-gem 'foundation-rails', '~> 5.5.2'
+#gem 'foundation-rails', '~> 5.5.2'
+gem 'twitter-bootstrap-rails', '~> 3.2.0'
 group :development do
   gem 'rails_layout'
 end

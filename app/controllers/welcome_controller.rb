@@ -9,6 +9,8 @@ class WelcomeController < ApplicationController
   def papshere
     @user = current_user
     @jour = Jour.actif
+    @creneaux_affprev  = @jour.creneaus_affprev
+    @creneaux_commando = @jour.creneaus_commando
   end
 
 end
