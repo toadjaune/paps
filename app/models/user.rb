@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /.*@supelec\.fr/, message: 'L\'email doit être en @supelec.fr' }
   before_validation(on: :create) do
     self.admin = false
-    self.email = "#{self.email}@supelec.fr"
     p "bleh"
   end
   with_options unless: :admin do |n1a|
