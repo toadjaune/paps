@@ -16,8 +16,12 @@ class Tentative < ActiveRecord::Base
   end
 
   def correct?
-    #TODO: Tolérer les réponses multiples
-    contenu == pap.reponse
+    pap.reponse.split(';').each do |rep|
+      if contenu == rep
+        return true
+      end
+    end
+    false
   end
 
   protected
