@@ -1,9 +1,10 @@
-<h1>Liste des jours</h1>
+<h1 class="titre">Liste des jours</h1>
 
-<%= link_to 'Retour', root_url %><br/>
-<%= link_to 'Nouveau Jour', new_jour_path %>
+<div class="espace">
+	<%= link_to 'Nouveau Jour', new_jour_path, :class=>"btn btn-primary" %>
+</div>
 
-<table>
+<table class="table table-striped table-responsive" >
   <tr>
     <th>Date</th>
     <th>Max Aff/Prev</th>
@@ -12,7 +13,7 @@
   </tr>
 
   <% @jours.each do |jour| %>
-    <tr <% if jour.actif %>class="active"<% end %>>
+    <tr <% if jour.actif %>class="success"<% end %>>
       <td><%= link_to jour, jour %></td>
       <td><%= jour.max_affprev %></td>
       <td><%= jour.max_commandos %></td>
@@ -20,3 +21,4 @@
     </tr>
   <% end %>
 </table>
+<%= link_to 'Retour', root_url, :class=>"btn btn-link" %>

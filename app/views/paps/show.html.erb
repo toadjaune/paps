@@ -1,22 +1,20 @@
-<p>
-  <strong>Question:</strong>
-  <%= @pap.question %><br/>
-</p>
-<p>
-  <strong>Réponse:</strong>
-  <%= @pap.reponse %><br/>
-</p>
-<p>
-  <strong>Jour:</strong>
-  <%= @pap.jour %><br/>
-</p>
-<p>
-  <strong>Bar:</strong>
-  <%= @pap.bar %><br/>
-</p>
-
-<%= link_to 'Modifier', edit_pap_path(@pap) %><br/>
-<%= link_to 'Supprimer', pap_path(@pap),
-                    method: :delete,
-                    data: { confirm: 'Voulez-vous vraiment supprimer ce PAPS ?' } %><br/>
-<%= link_to 'retour', paps_path %>
+<div class="espace">
+	<strong>Question:</strong>
+	<%= @pap.question %><br/>
+	<strong>Réponse:</strong>
+	<%= @pap.reponse %><br/>
+	<strong>Jour:</strong>
+	<%= @pap.jour %><br/>
+	<strong>Bar:</strong>
+	<%= @pap.bar %><br/>
+</div>
+<div class="espace btn-group">
+	<%= link_to 'Modifier', edit_pap_path(@pap), :class=>"btn btn-default" %>
+	<%= link_to 'Supprimer', pap_path(@pap), :class=>"btn btn-default",
+		method: :delete,
+		data: { confirm: 'Voulez-vous vraiment supprimer ce PAPS ?' } %>
+	<%= link_to 'Retour', paps_path, :class=>"btn btn-default" %>
+</div>
+<div class="row">
+	<%= link_to 'Retour', paps_path, :class=>"btn btn-link" %>
+</div>

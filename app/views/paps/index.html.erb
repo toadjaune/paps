@@ -1,6 +1,8 @@
-<h1>Liste des PAPS</h1>
+<h1 class="titre">Liste des PAPS</h1>
 
-<%= link_to 'Retour', root_url %><br/>
-<%= link_to 'Nouveau PAPS', new_pap_path %>
+<div class="espace">
+	<%= link_to 'Nouveau PAPS', new_pap_path, :class=>"btn btn-primary" %>
+</div>
 
 <%= render partial: 'paps', object: @paps %>
+<%= link_to 'Retour', root_url, :class=>"btn btn-link" %>

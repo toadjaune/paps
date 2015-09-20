@@ -1,6 +1,6 @@
 <%= form_for @jour do |f| %>
   <% if @jour.errors.any? %>
-    <div id="error_explanation">
+    <div id="alert alert-danger">
       <h2>
         Impossible d'enregistrer le jour :
       </h2>
@@ -11,26 +11,36 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </p>
-  <p>
-    <%= f.label :max_affprev %><br>
-    <%= f.text_field :max_affprev %>
-  </p>
-  <p>
-    <%= f.label :max_commandos %><br>
-    <%= f.text_field :max_commandos %>
-  </p>
-  <p>
-    <%= f.label :actif %><br>
-    <%= f.select :actif, [['Oui', true], ['Non', false]] %>
-  </p>
+  <div class="form-horizontal">
+  <div class="form-group">
+	  <%= f.label :date, :class=>"col-sm-2 control-label" %>
+	  <div class="col-sm-7">
+		  <%= f.text_field :date, :class=>"form-control" %>
+		</div>
+  </div>
+  <div class="form-group">
+	  <%= f.label :max_affprev, :class=>"col-sm-2 control-label" %>
+	  <div class="col-sm-7">
+		  <%= f.text_field :max_affprev, :class=>"form-control" %>
+	  </div>
+  </div>
+  <div class="form-group">
+	  <%= f.label :max_commandos, :class=>"col-sm-2 control-label" %>
+	  <div class="col-sm-7">
+		  <%= f.text_field :max_commandos, :class=>"form-control" %>
+	  </div>
+  </div>
+  <div class="form-group">
+	  <%= f.label :actif, :class=>"col-sm-2 control-label" %>
+	  <div class="col-sm-7">
+		  <%= f.select :actif, [['Oui', true], ['Non', false]], :class=>"form-control" %>
+	  </div>
+  </div>
 
-  <p>
-    <%= f.submit class: 'button submit-button radius' %>
-  </p>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary col-sm-offset-7 col-sm-2' %>
+    </div>
+    </div>
 <% end %>
 
 <%= link_to 'Retour', jours_path %>

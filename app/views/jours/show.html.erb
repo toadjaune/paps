@@ -1,6 +1,6 @@
-<h1>Jour</h1>
+<h1 class="titre">Jour</h1>
 
-<p>
+<div class="espace">
   <strong>Date:</strong>
   <%= @jour.date %><br/>
   <strong>Créneaux d'affichage/prévente maximum par jour:</strong>
@@ -9,23 +9,22 @@
   <%= @jour.max_commandos %><br/>
   <strong>Actif:</strong>
   <%= @jour.actif %><br/>
-</p>
-<%= link_to 'Modifier', edit_jour_path(@jour) %> | 
-<%= link_to 'Supprimer', jour_path(@jour),
+</div>
+
+<div class="btn-group espace">
+	<%= link_to 'Modifier', edit_jour_path(@jour), :class=>"btn btn-default" %> 
+	<%= link_to 'Supprimer', jour_path(@jour), :class=>"btn btn-default",
   method: :delete,
   data: { confirm: 'Voulez-vous vraiment supprimer ce jour ?
-    Attention, cela supprime tous les PAPS et créneaux appartenant à ce jour !' } %> | 
-<%= link_to 'retour', jours_path %>
-<p>
-PAPS :
+    Attention, cela supprime tous les PAPS et créneaux appartenant à ce jour !' } %> 
+<%= link_to 'retour', jours_path, :class=>"btn btn-default" %>
+  </div>
+<div clas="espace">
+	<h3>PAPS :</h3>
 <%= render partial: 'paps/paps', object: @jour.paps %>
-</p>
-<% if @jours_restants %>
-  <strong>Attention, il reste des jours sans PAPS pour ce jour !</strong><br/>
-  <% #link_to 'Nouveau PAPS', newpaps_jour_path(@jour) %>
-  (Lien à insérer)
-<% end %>
-<p>
-Créneaux :
+</div>
+<div class="espace">
+	<h3>Créneaux :</h3>
 <%= render partial: 'creneaus/creneaus', object: @jour.creneaus %>
-</p>
+</div>
+<%= link_to 'retour', jours_path, :class=>"btn btn-link" %>

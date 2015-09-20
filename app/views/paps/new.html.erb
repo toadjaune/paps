@@ -1,8 +1,9 @@
-<h2>Nouveau PAPS</h1>
+<h2 class="titre">Nouveau PAPS</h1>
 
 <%= form_for :pap, url: paps_path do |f| %>
+<div class="form-horizontal">
   <% if @pap && @pap.errors.any? %>
-    <div id="error_explanation">
+    <div id="alert alert-danger">
       <h2>
         Impossible d'enregistrer le PAPS :
       </h2>
@@ -14,31 +15,42 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :question %><br>
-    <%= f.text_field :question %>
-  </p>
+  <div class="form-group">
+	  <%= f.label :question, :class=>"control-label col-sm-2" %>
+	  <div class="col-sm-7">
+		  <%= f.text_field :question, :class=>"form-control" %>
+	</div>
+  </div>
 
-  <p>
-    /!\ Il est possible de metrre plusieurs réponses séparées par des ";", mais attention à <strong>NE PAS METTRE D'ESPACES AVANT OU APRÈS !</strong>
-    <%= f.label :reponse %><br>
-    <%= f.text_field :reponse %>
-  </p>
+  <div class="form-group">
+	  <%= f.label :reponse, :class=>"control-label col-sm-2" %>
+    <div class="col-sm-7">
+	    <%= f.text_field :reponse, :class=>"form-control" %>
+	    <span class="help-block"> /!\ Il est possible de metrre plusieurs réponses séparées par des ";", mais attention à <strong>NE PAS METTRE D'ESPACES AVANT OU APRÈS !</strong></span>
+	  </div>
+  </div>
 
-  <p>
-    <%= f.label :bar %><br>
-    <%= f.collection_select :bar_id, Bar.order(:name), :id, :name %>
-  </p>
+  <div class="form-group">
+	  <%= f.label :bar, :class=>"control-label col-sm-2" %>
+	  <div class="col-sm-7">
+		  <%= f.collection_select :bar_id, Bar.order(:name), :id, :name, :class=>"form-control" %>
+		 </div>
+  </div>
 
-  <p>
-    <%= f.label :jour %><br>
-    <%= f.collection_select :jour_id, Jour.order(:date), :id, :date %>
-  </p>
-
-  <p>
-    <%= f.submit class: 'button submit-button radius' %>
-  </p>
+  <div class="form-group">
+	  <%= f.label :jour, :class=>"control-label col-sm-2" %>
+	  <div class="col-sm-7">
+		  <%= f.collection_select :jour_id, Jour.order(:date), :id, :date, :class=>"form-control" %>
+	  </div>
+  </div>
+  <div class="form-group">
+  <div class="col-sm-2 col-sm-offset-7">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+</div>
+</div>
 <% end %>
-
-<%= link_to 'Retour', paps_path %>
+<div class="row">
+	<%= link_to 'Retour', paps_path, :class=>"btn btn-link" %>
+</div>
 

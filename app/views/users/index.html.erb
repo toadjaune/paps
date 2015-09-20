@@ -1,11 +1,11 @@
-<h1>Liste des Utilisateurs</h1>
+<h1 class="titre">Liste des Utilisateurs</h1>
 
-<%= link_to 'Retour', root_url %><br/>
 
-<table>
+<table class="table table-striped table-responsive">
   <tr>
     <th>Nom</th>
     <th>Bar</th>
+    <th></th>
   </tr>
 
   <% @users.each do |user| %>
@@ -18,3 +18,4 @@
     </tr>
   <% end %>
 </table>
+<%= link_to 'Retour', root_url %><br/>
