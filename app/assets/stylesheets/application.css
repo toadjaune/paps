@@ -4,4 +4,11 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree .
-*/
+ */
+
+.titre{
+	border-bottom: solid 2px;
+	border-color: -moz-use-text-color -moz-use-text-color #E5E5E5;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
