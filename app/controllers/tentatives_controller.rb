@@ -18,7 +18,9 @@ class TentativesController < ApplicationController
 
   def create
     @tentative = Tentative.new(tentative_params)
-    @tentative.save 
+    if @tentative.save 
+      try_to_paps
+    end
     redirect_to :back
   end
 
@@ -42,7 +44,24 @@ class TentativesController < ApplicationController
   end
 
   private
+
   def tentative_params
-    params.require(:tentative).permit(:contenu, :pap_id, :user_id)
+    params.require(:tentative).permit(:contenu, :pap_id, :user_id, :creneau_id)
+  end
+
+  def try_to_paps
+    if @tentative.creneau.affprev?
+      if @tentative.pap.can_paps_affprev?
+        if @tentative.correct?
+          @tentative.creneau.pap = @tentative.pap
+          @tentative.creneau.save!
+          flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+        else
+          flash.alert = "Réponse incorrecte"
+        end
+      else
+        flash.alert = "Vous avez déjà PAPSé le maximum de créneaux affprev pour aujourd'hui"
+      end
+    end
   end
 end

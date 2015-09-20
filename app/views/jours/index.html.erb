@@ -12,7 +12,7 @@
   </tr>
 
   <% @jours.each do |jour| %>
-  <tr <% if jour.actif %>class="jour-actif"<% end %>>
+    <tr <% if jour.actif %>class="active"<% end %>>
       <td><%= link_to jour, jour %></td>
       <td><%= jour.max_affprev %></td>
       <td><%= jour.max_commandos %></td>

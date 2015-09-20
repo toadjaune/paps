@@ -24,6 +24,11 @@
   </p>
 
   <p>
+    <%= f.label :creneau %><br>
+    <%= f.collection_select :creneau_id, Creneau.order(:nom), :id, :nom %>
+  </p>
+
+  <p>
     TODO : Refaire ce champ <br/>
     <%= f.label :pap %><br>
     <%= f.collection_select :pap_id, Pap.order(:reponse), :id, :reponse %>
