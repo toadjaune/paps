@@ -7,6 +7,7 @@ gem 'rails', '~> 4.2.3'
 gem 'devise', '~> 3.5.2'
 #gem 'foundation-rails', '~> 5.5.2'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
+gem 'less-rails-bootstrap'
 group :development do
   gem 'rails_layout'
 end

@@ -14,8 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require foundation
 //= require_tree .
-$(function() {
-  $(document).foundation();
-});
