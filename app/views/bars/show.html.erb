@@ -1,14 +1,18 @@
-<h1>Bar</h1>
-<p>
-  <strong>Nom:</strong>
+<h1 class="titre">Bar</h1>
+<div class="well">
+  <strong>Nom :</strong>
   <%= @bar.name %>
-</p>
-<%= link_to 'Modifier', edit_bar_path(@bar) %> | 
-<%= link_to 'Supprimer', bar_path(@bar),
+</div>
+<div class="row text-center espace">
+<div class="btn-group">
+	<%= link_to 'Modifier', edit_bar_path(@bar), :class=>"btn btn-default" %> 
+	<%= link_to 'Supprimer', bar_path(@bar), :class=>"btn btn-default",
   method: :delete,
   data: { confirm: 'Voulez-vous vraiment supprimer ce bar ?
-    Attention, cela supprime tous les n1As appartenant à ce bar !' } %> | 
-<%= link_to 'retour', bars_path %>
+    Attention, cela supprime tous les n1As appartenant à ce bar !' } %>  
+    <%= link_to 'Retour', bars_path, :class=>"btn btn-default" %>
+ </div>
+</div>
 
 
 <%= render partial: 'users/users', object: @bar.users %>

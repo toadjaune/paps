@@ -1,12 +1,15 @@
-<h1>Liste des bars</h1>
-
-<%= link_to 'Retour', root_url %><br/>
-<%= link_to 'Nouveau Bar', new_bar_path %>
-
-<h2><small>Liste des bars</small></h2>
+<h1 class="titre">Liste des bars</h1>
+<div class="espace">
+<%= link_to 'Nouveau Bar', new_bar_path, :class=>"btn btn-primary" %>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Liste des bars
+	</div>
+	<div class="panel-body list-group">
   <% @bars.each do |bar| %>
-    <ul>
-      <li><%= link_to bar, bar %></li>
-    </ul>
+	  <%= link_to bar, bar, :class=>"list-group-item" %>
   <% end %>
+    </div>
+    </div>
 
