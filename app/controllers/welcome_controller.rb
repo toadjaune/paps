@@ -9,8 +9,13 @@ class WelcomeController < ApplicationController
   def papshere
     @user = current_user
     @jour = Jour.actif
-    @creneaux_affprev  = @jour.creneaus_affprev
-    @creneaux_commando = @jour.creneaus_commando
+    @bar = current_user.bar
+    @tentative = Tentative.new
+    if @jour
+      @creneaux_affprev  = @jour.creneaus_affprev
+      @creneaux_commando = @jour.creneaus_commando
+      @paps = @jour.paps.where(bar_id: @bar.id).take
+    end
   end
 
 end

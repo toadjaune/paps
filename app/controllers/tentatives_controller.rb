@@ -18,11 +18,8 @@ class TentativesController < ApplicationController
 
   def create
     @tentative = Tentative.new(tentative_params)
-    if @tentative.save 
-      redirect_to @tentative
-    else
-      render 'new'
-    end
+    @tentative.save 
+    redirect_to :back
   end
 
   def update
