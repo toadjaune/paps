@@ -18,7 +18,7 @@ class BarsController < ApplicationController
   def create
     @bar = Bar.new(bar_params)
     if @bar.save 
-      redirect_to @bar
+      redirect_to bars_path
     else
       render 'new'
     end
