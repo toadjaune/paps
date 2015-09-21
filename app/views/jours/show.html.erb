@@ -22,9 +22,11 @@
 <div class="espace">
 	<h3>PAPS :</h3>
 <%= render partial: 'paps/paps', object: @jour.paps %>
+<%= link_to 'Nouveau PAPS', newpaps_path(@jour) %>
 </div>
 <div class="espace">
 	<h3>Créneaux :</h3>
 <%= render partial: 'creneaus/creneaus', object: @jour.creneaus %>
+<%= link_to 'Nouveau créneau', newcreneau_path(@jour) %>
 </div>
 <%= link_to 'retour', jours_path, :class=>"btn btn-link" %>
