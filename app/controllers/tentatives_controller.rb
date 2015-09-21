@@ -1,5 +1,6 @@
 class TentativesController < ApplicationController
 
+  skip_before_action :authenticate_admin!, only: :create
   def index
     @tentatives = Tentative.all
   end
