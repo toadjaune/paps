@@ -18,4 +18,8 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def barcreneaux
+    @bar = current_user.bar
+  end
+
 end

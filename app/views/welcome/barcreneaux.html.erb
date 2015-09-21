@@ -1,0 +1,27 @@
+<h2>Liste des créneaux</h2>
+<p>
+  Ici se trouve la liste des créneaux que votre bar a déjà PAPSé, avec un descriptif plus détaillé.
+</p>
+<table class="table table-responsive">
+  <tr>
+    <th>Nom</th>
+    <th>Jour</th>
+    <th>Type</th>
+    <th>Distance</th>
+    <th>Adresse</th>
+    <th>Commentaires</th>
+  </tr>
+
+  <% @bar.paps.each do |pap| %>
+    <% pap.creneaus.each do |creneau| %>
+      <tr>
+        <td><%= creneau %></td>
+        <td><%= creneau.jour %></td>
+        <td><%= creneau.genre %></td>
+        <td><%= creneau.distance %></td>
+        <td><%= creneau.adresse %></td>
+        <td><%= creneau.commentaires %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

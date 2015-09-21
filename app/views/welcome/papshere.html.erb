@@ -11,67 +11,79 @@
 </div>
 
   <% if @creneaux_affprev %>
-	  <div class="panel panel-primary">
-		  <div class="panel-heading">
-			  Créneaux affichage et préventes (maximum <%=@jour.max_affprev%> par bar):
-		  </div>
-  </div>
-      <table class="table table-striped table-responsive">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Créneaux affichage et préventes (maximum <%=@jour.max_affprev%> par bar):
+      </div>
+    </div>
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>Distance</th>
+      </tr>
+    
+      <% @creneaux_affprev.each do |creneau| %>
         <tr>
-          <th>Nom</th>
-          <th>Type</th>
-          <th>Distance</th>
-        </tr>
-      
-        <% @creneaux_affprev.each do |creneau| %>
-          <tr>
-            <td><%= link_to creneau, creneau %></td>
-            <td><%= creneau.genre %></td>
-            <td><%= creneau.distance %></td>
-            <td>
-              <% if creneau.bar %>
-                <%= creneau.bar %>
-              <% else %>
-                <% if @paps.can_paps_affprev? %>
-                  <%= form_for @tentative do |f| %>
-                    <%= f.text_field :contenu %>
-                    <%= f.hidden_field :pap_id,     value: @paps.id %>
-                    <%= f.hidden_field :user_id,    value: @user.id %>
-                    <%= f.hidden_field :creneau_id, value: creneau.id %>
-                    <%= f.submit 'PAPSer !' %>
-                  <% end %>
+          <td><%= link_to creneau, creneau %></td>
+          <td><%= creneau.genre %></td>
+          <td><%= creneau.distance %></td>
+          <td>
+            <% if creneau.bar %>
+              <%= creneau.bar %>
+            <% else %>
+              <% if @paps.can_paps_affprev? %>
+                <%= form_for @tentative do |f| %>
+                  <%= f.text_field :contenu %>
+                  <%= f.hidden_field :pap_id,     value: @paps.id %>
+                  <%= f.hidden_field :user_id,    value: @user.id %>
+                  <%= f.hidden_field :creneau_id, value: creneau.id %>
+                  <%= f.submit 'PAPSer !' %>
                 <% end %>
               <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   <% end %>
 
   <% if @creneaux_commando %>
-	  <div class="panel panel-primary">
-		  <div class="panel-heading">
-			  Créneaux commando :
-		  </div>
-	  </div>
-      <table class="table table-striped table-responsive">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Créneaux commando (maximum <%=@jour.max_commandos%> par bar):
+      </div>
+    </div>
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>Distance</th>
+      </tr>
+    
+      <% @creneaux_commando.each do |creneau| %>
         <tr>
-          <th>Nom</th>
-          <th>Distance</th>
-          <th>Adresse</th>
-          <th>Commentaires</th>
+          <td><%= link_to creneau, creneau %></td>
+          <td><%= creneau.genre %></td>
+          <td><%= creneau.distance %></td>
+          <td>
+            <% if creneau.bar %>
+              <%= creneau.bar %>
+            <% else %>
+              <% if @paps.can_paps_commando? %>
+                <%= form_for @tentative do |f| %>
+                  <%= f.text_field :contenu %>
+                  <%= f.hidden_field :pap_id,     value: @paps.id %>
+                  <%= f.hidden_field :user_id,    value: @user.id %>
+                  <%= f.hidden_field :creneau_id, value: creneau.id %>
+                  <%= f.submit 'PAPSer !' %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </td>
         </tr>
-      
-        <% @creneaux_commando.each do |creneau| %>
-          <tr>
-            <td><%= link_to creneau, creneau %></td>
-            <td><%= creneau.distance %></td>
-            <td><%= creneau.adresse %></td>
-            <td><%= creneau.commentaires %></td>
-          </tr>
-        <% end %>
-      </table>
+      <% end %>
+    </table>
   <% end %>
-
 <% end %>
 

@@ -63,5 +63,18 @@ class TentativesController < ApplicationController
         flash.alert = "Vous avez déjà PAPSé le maximum de créneaux affprev pour aujourd'hui"
       end
     end
+    if @tentative.creneau.commando?
+      if @tentative.pap.can_paps_commando?
+        if @tentative.correct?
+          @tentative.creneau.pap = @tentative.pap
+          @tentative.creneau.save!
+          flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+        else
+          flash.alert = "Réponse incorrecte"
+        end
+      else
+        flash.alert = "Vous avez déjà PAPSé le maximum de créneaux commando pour aujourd'hui"
+      end
+    end
   end
 end

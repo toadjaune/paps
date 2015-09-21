@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   get '/papshere', :to => 'welcome#papshere' 
+  get '/barcreneaux', :to => 'welcome#barcreneaux' 
 
   devise_for :users
   resources :users

@@ -1,3 +1,8 @@
-<li>
-  <%= link_to 'PAPSer !',  papshere_path %>
-</li>
+<li><%= link_to 'PAPSer !',  papshere_path %></li>
+<li><%= link_to 'Créneaux',  barcreneaux_path %></li>
+<% if current_user and current_user.admin? %>
+  <li><%= link_to 'Bars',  controller: 'bars' %> </li>
+  <li><%= link_to 'Users', controller: 'users' %></li>
+  <li><%= link_to 'Jours', controller: 'jours' %></li>
+  <li><%= link_to 'PAPS',  controller: 'paps' %> </li>
+<% end %>
