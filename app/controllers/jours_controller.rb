@@ -52,6 +52,14 @@ class JoursController < ApplicationController
     @creneau = Creneau.new
   end
 
+  def showtentatives
+    @jour = Jour.find(params[:id])
+    @tentatives = []
+    @jour.paps.each { |p| p.tentatives.each { |t| @tentatives << t } }
+    @tentatives.sort! { |e| e[:id] }
+  end
+
+
   private
     def jour_params
       params.require(:jour).permit(:date, :max_commandos, :max_affprev, :actif)

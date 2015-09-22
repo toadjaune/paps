@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'jours/:id/newpaps', to: 'jours#newpaps', as: 'newpaps'
   get 'jours/:id/newcreneau', to: 'jours#newcreneau', as: 'newcreneau'
+  get 'jours/:id/showtentatives', to: 'jours#showtentatives', as: 'showtentatives'
   get 'welcome/index'
 
   get '/papshere', :to => 'welcome#papshere' 

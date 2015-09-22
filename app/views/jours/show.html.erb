@@ -18,7 +18,8 @@
   data: { confirm: 'Voulez-vous vraiment supprimer ce jour ?
     Attention, cela supprime tous les PAPS et créneaux appartenant à ce jour !' } %> 
 <%= link_to 'retour', jours_path, :class=>"btn btn-default" %>
-  </div>
+  </div><br/>
+<%= link_to 'Liste des tentatives de la journée', showtentatives_path(@jour) %>
 <div class="espace">
 	<h3>PAPS :</h3>
 <%= render partial: 'paps/paps', object: @jour.paps %>
