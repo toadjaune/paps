@@ -38,4 +38,4 @@
 <%= link_to 'Supprimer', creneau_path(@creneau),
   method: :delete,
   data: { confirm: 'Voulez-vous vraiment supprimer ce creneau ?' } %><br/>
-<%= link_to 'retour', creneaus_path %>
+<%= link_to 'retour', jour_path(@creneau.jour) %>

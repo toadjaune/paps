@@ -19,7 +19,7 @@ class CreneausController < ApplicationController
   def create
     @creneau = Creneau.new(creneau_params)
     if @creneau.save 
-      redirect_to @creneau
+      redirect_to @creneau.jour
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class CreneausController < ApplicationController
   def update
     @creneau = Creneau.find(params[:id])
     if @creneau.update(creneau_params)
-      redirect_to @creneau
+      redirect_to @creneau.jour
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class CreneausController < ApplicationController
   def destroy
     @creneau = Creneau.find(params[:id])
     @creneau.destroy
-    redirect_to creneaus_path
+    redirect_to @creneau.jour
   end
 
   private

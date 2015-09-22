@@ -27,7 +27,7 @@ class PapsController < ApplicationController
   def update
     @pap = Pap.find(params[:id])
     if @pap.update(pap_params)
-      redirect_to @pap
+      redirect_to @pap.jour
     else
       render 'edit'
     end
@@ -36,7 +36,7 @@ class PapsController < ApplicationController
   def destroy
     @pap = Pap.find(params[:id])
     @pap.destroy
-    redirect_to paps_path
+    redirect_to @pap.jour
   end
 
   private
