@@ -24,12 +24,6 @@
   </p>
 
   <p>
-    TODO : Refaire ce champ <br/>
-    <%= f.label :pap %><br>
-    <%= f.collection_select :pap_id, Pap.order(:reponse), :id, :reponse %>
-  </p>
-
-  <p>
     <%= f.label :genre %><br/>
     <%= f.select :genre, ['Affichage', 'Prevente', 'Commando'] %>
   </p>
@@ -46,7 +40,7 @@
   
   <p>
     <%= f.label :commentaires%><br/>
-    <%= f.text_field :commentaires %>
+    <%= f.text_area :commentaires %>
   </p>
   
   <p>
