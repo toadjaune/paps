@@ -7,7 +7,7 @@
 <% else %>
 	<h3>PAPS pour le <%= @jour %>:</h3>
 	<div class="well well-lg">
-<%= @paps.question %>
+<%= @paps.question.html_safe %>
 </div>
 
   <% if @creneaux_affprev %>
