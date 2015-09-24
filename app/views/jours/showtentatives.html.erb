@@ -11,7 +11,7 @@
     <th>Solution</th>
     <th>Tentative</th>
   </tr>
-  <% @tentatives.each do |t| %>
+  <% @tentatives.sort{|t| -t[:id]}.each do |t| %>
     <tr>
       <td><%= link_to t.pap.bar %></td>
       <td><%= t.pap.question %></td>
