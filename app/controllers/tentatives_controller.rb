@@ -51,30 +51,40 @@ class TentativesController < ApplicationController
   end
 
   def try_to_paps
-    if @tentative.creneau.affprev?
-      if @tentative.pap.can_paps_affprev?
-        if @tentative.correct?
-          @tentative.creneau.pap = @tentative.pap
-          @tentative.creneau.save!
-          flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+    Creneau.transaction do
+      if @tentative.creneau.affprev?
+        if @tentative.creneau.pap.nil?
+          if @tentative.pap.can_paps_affprev?
+            if @tentative.correct?
+              @tentative.creneau.pap = @tentative.pap
+              @tentative.creneau.save!
+              flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+            else
+              flash.alert = "Réponse incorrecte"
+            end
+          else
+            flash.alert = "Vous avez déjà PAPSé le maximum de créneaux affprev pour aujourd'hui"
+          end
         else
-          flash.alert = "Réponse incorrecte"
+          flash.alert = "Ce créneau a déjà été PAPSé"
         end
-      else
-        flash.alert = "Vous avez déjà PAPSé le maximum de créneaux affprev pour aujourd'hui"
       end
-    end
-    if @tentative.creneau.commando?
-      if @tentative.pap.can_paps_commando?
-        if @tentative.correct?
-          @tentative.creneau.pap = @tentative.pap
-          @tentative.creneau.save!
-          flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+      if @tentative.creneau.commando?
+        if @tentative.creneau.pap.nil?
+          if @tentative.pap.can_paps_commando?
+            if @tentative.correct?
+              @tentative.creneau.pap = @tentative.pap
+              @tentative.creneau.save!
+              flash.notice = "Bravo ! Vous avez PAPSé ce créneau !"
+            else
+              flash.alert = "Réponse incorrecte"
+            end
+          else
+            flash.alert = "Vous avez déjà PAPSé le maximum de créneaux commando pour aujourd'hui"
+          end
         else
-          flash.alert = "Réponse incorrecte"
+          flash.alert = "Ce créneau a déjà été PAPSé"
         end
-      else
-        flash.alert = "Vous avez déjà PAPSé le maximum de créneaux commando pour aujourd'hui"
       end
     end
   end
