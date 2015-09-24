@@ -24,6 +24,11 @@
   </p>
 
   <p>
+    <%= f.label :pap %><br>
+    <%= f.collection_select :pap_id, Pap.all, :id, :question, include_blank: true  %>
+  </p>
+
+  <p>
     <%= f.label :genre %><br/>
     <%= f.select :genre, ['Affichage', 'Prevente', 'Commando'] %>
   </p>

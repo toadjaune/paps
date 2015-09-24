@@ -9,9 +9,13 @@ class Jour < ActiveRecord::Base
   validates :actif, inclusion: { in: [true, false] }
   
   # Au plus un jour actif
+  #before_save do |jour|
+  #  Jour.where(actif: true).first.update(actif: false) if jour.actif?
+  #end
   validate do |jour|
-    if jour.actif? and (not (jour.id and Jour.find(jour.id).actif?)) and (Jour.where(actif: true).count >= 1)
-      jour.errors[:base] << "Il doit y avoir au plus une année courante"
+    jour_actif = Jour.where(actif: true).first
+    if jour.actif? && !jour_actif.nil? && jour_actif.id != jour.id
+      jour.errors[:base] << "Il doit y avoir au plus un jour courant"
     end
   end
 
