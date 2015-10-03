@@ -56,7 +56,7 @@ class JoursController < ApplicationController
     @jour = Jour.find(params[:id])
     @tentatives = []
     @jour.paps.each { |p| p.tentatives.each { |t| @tentatives << t } }
-    @tentatives = @tentatives.sort { |e| e[:id] }
+    @tentatives = @tentatives.sort_by { |e| e[:id] }
   end
 
 
