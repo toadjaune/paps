@@ -2,12 +2,14 @@
   <tr>
     <th>Utilisateur</th>
     <th>Bar</th>
+    <th>Nb. Tentatives</th>
   </tr>
 
   <% users.each do |user| %>
     <tr>
       <td><%= link_to user, user %></td>
       <td><%= link_to user.bar %></td>
+      <td><%= user.tentatives.count %></td>
     </tr>
   <% end %>
 </table>
