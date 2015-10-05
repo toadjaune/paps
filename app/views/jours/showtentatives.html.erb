@@ -9,16 +9,16 @@
     <th>Bar</th>
     <th>Question</th>
     <th>Solution</th>
-    <th>Tentative</th>
     <th>n1A</th>
+    <th>Tentative</th>
   </tr>
   <% @tentatives.each do |t| %>
     <tr>
       <td><%= link_to t.pap.bar %></td>
       <td><%= t.pap.question %></td>
       <td><%= t.pap.reponse %></td>
-      <td><%= t.contenu %></td>
       <td><%= t.user %></td>
+      <td><%= t.contenu %></td>
     </tr>
   <% end %>
 </table>
