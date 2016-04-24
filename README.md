@@ -11,13 +11,14 @@ Feel free to reuse anything you might find useful here (content licensed under G
 - Install rvm (https://rvm.io/rvm/install)
   - Do not forget to add `source ~/.rvm/scripts/rvm` to your .bashrc
 - Come in and out of your repo until RVM stops complaining
-* For the next instructions, carefully stay inside the repo
-- `gem install bundler`
-- `sudo apt-get install mysql-server libmysqlclient`
-- `bundle install`
-- `cp config/database.yml.example config/database.yml`
-- `cp config/secrets.yml.example config/secrets.yml`
-- `rake db:migrate`
+- For the next instructions, carefully stay inside the repo
+  - `gem install bundler`
+  - `sudo apt-get install postgresql postgresql-server-dev-all`
+  - `sudo -Eu postgres createuser -d $USER`
+  - `bundle install`
+  - `cp config/database.yml.example config/database.yml`
+  - `cp config/secrets.yml.example config/secrets.yml`
+  - `rake db:migrate`
 
 
 # Useful commands
