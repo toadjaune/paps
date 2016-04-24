@@ -17,7 +17,8 @@ gem 'devise-i18n'
 
 gem 'passenger'
 
-gem 'mysql2', '~> 0.3.18'
+#gem 'mysql2', '~> 0.3.18'
+gem 'postgresql'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

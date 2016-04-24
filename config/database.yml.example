@@ -1,18 +1,15 @@
 # Copier ce fichier en tant que database.yml
 
-# Il faudra créer un utilisateur 'paps' et les 3 bases de données 'paps_development', 
-# 'paps_production' et 'paps_test', et lui donner accès à ces BDD.
+# Pour installer postgresql et vous donner les droits de créer les BDD de dev et test :
+# $ apt-get install postgresql
+# $ sudo -Eu postgres createuser -d $USER
 
-# phpmyadmin est votre ami, google, aussi.
 
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: 5
   timeout: 5000
   encoding: utf8
-  collation: utf8_general_ci
-  username: paps
-  password: unsupermotdepassebienaleatoire
 
 development:
   <<: *default
@@ -28,3 +25,5 @@ test:
 production:
   <<: *default
   database: paps_production
+  username: paps
+  password: qzigvbiuqzegqizwyogviyzegfksjgvyusgkuzefhvzuejvbzievbhkez
